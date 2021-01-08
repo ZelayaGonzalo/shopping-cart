@@ -1,0 +1,141 @@
+nav ul{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  background-color: #022B3A;
+  height: 5vh;
+}
+nav ul .links{
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style-type: none;
+}
+a{
+  color: white;
+}
+
+.App{
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 95vh;
+  background-image: url("./imgs/Hilux.jpeg");
+  background-size:cover;
+}
+.App h1{
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.App button{
+  position: absolute;
+  top:80vh;
+  right: 10vw;
+  margin: 0%;
+}
+
+.storeContainer{
+margin: 0;
+width: 100vw;
+display: flex;
+}
+.storeContainer .sideBar{
+  margin: 0%;
+  height: 95vh;
+  min-width: 245px;
+  background-color: #022B3A;
+  border-right: solid 5px;
+  border-color: #022B3A;
+}
+.storeContainer .cardContainer{
+  position: relative;
+  margin: 0;
+  background-color: white;
+  height: 95vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  overflow:auto;
+}
+.storeContainer .cardContainer .cardFrame{
+  text-align: center;
+  justify-self: center;
+  width: 400px;
+  height: 300px;
+  margin: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+}
+.storeContainer .cardContainer .cardFrame:hover{
+  background-color: rgba(0, 0, 0, 0.308);
+}
+.storeContainer .cardContainer .cardFrame img{
+  width: 100%;
+  height: auto;
+}
+.storeContainer .cardContainer .cardFrame h2{
+  margin: 0;
+}
+.storeContainer .cardContainer .cardFrame p{
+  margin: 0;
+}
+
+
+
+
+.item{
+  border-top: 1px solid #478978;
+  overflow: hidden;
+}
+.btn{
+  display: block;
+  padding: 16px 20px;
+  background: #478978;
+  color: white;
+  position: relative;
+}
+.btn:before{
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background:#478978;
+  left: 20px;
+  bottom: -7px;
+  transform: rotate(45deg);
+}
+.smenu{
+  background: #022B3A;
+  overflow: hidden;
+  transition: max-height 0.3s;
+  max-height: 0;
+}
+.smenu a{
+  display: block;
+  padding: 16px 26px;
+  color: white;
+  font-size: 14px;
+  margin: 4px 0;
+  position: relative;
+}
+.smenu a:before{
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background: #478978;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+  opacity: 0;
+}
+.smenu a:hover:before{
+  opacity: 1;
+}
+
+.item:target .smenu{
+  max-height: 10em;
+}
