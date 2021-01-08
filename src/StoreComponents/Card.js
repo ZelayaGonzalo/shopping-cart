@@ -7,7 +7,7 @@ return (
         <h2>{props.title}</h2>
         <p>"{props.shortDescription}"</p>
         <p>{props.price}</p>
-        <i id={props.title} className="fas fa-minus-circle" onClick={props.removeProduct}></i><i id={props.title} className="fas fa-plus-circle" onClick={props.addProduct}></i>
+        <button id={props.title}onClick={props.addProduct}> Add to cart </button>
     </div>
 )
 }

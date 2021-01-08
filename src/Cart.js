@@ -11,6 +11,7 @@ function Cart(props){
               onCart={info.onCart}
               price={info.price}
               addProduct={props.addProduct}
+              removeProduct={props.removeProduct}
             />
           </div>
         ))}

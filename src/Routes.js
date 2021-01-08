@@ -21,17 +21,35 @@ const Routes = () => {
   }
 
   function removeProductOfCart(event) {
-    const name=event.target.id
-    const newArray=[]
-    const checkArray=cart.find(info=> (info.name === name))
-    if(cart[checkArray].onCart>1){
-      newArray=cart[checkArray]
-      newArray[0].onCart-=1
+    const name = event.target.id
+    let newArray = []
+    const checkArray = cart.findIndex(info=> (info.name === name))
+    if(checkArray>-1){
+      let newComp = cart[checkArray]
+      if(newComp.onCart>1){
+        newComp=cart[checkArray]
+        newComp.onCart-=1
+       /* setCart(prevArray => {
+          console.log(prevArray)
+          console.log(checkArray)
+          console.log(newComp)
+          newArray = prevArray.slice(checkArray,1)
+          console.log(newArray)
+          //prevArray=prevArray.filter(info => info.name !== newComp.name)
+          return prevArray}
+        )*/
+      }
+      else{
+        newComp.onCart=0
+        setCart(prevArray =>{
+          newArray=prevArray.filter(info => info.name !== newComp.name)
+          return newArray
+        }
+        )
+      }
     }
-    newArray=cart.filter(info=> (info.name === name))
-    console.log(newArray)
-    setCart( () => newArray )
-  }
+    }
+    
 
   return (
     <BrowserRouter>
